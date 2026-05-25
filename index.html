@@ -15,7 +15,7 @@
       font-family: 'Noto Sans TC', sans-serif;
       background-color: transparent; /* 完全透明背景，適應外圍 #ffa64d 容器 */
       margin: 0;
-      overflow: hidden; /* 防止產生內部雙捲軸，確保乾淨 */
+      /* 移除 overflow: hidden 避免在手機或窄版容器下強行截斷內容 */
       -webkit-font-smoothing: antialiased;
     }
 
@@ -91,53 +91,53 @@
     }
   </style>
 </head>
-<body class="py-2 px-4 sm:px-6">
+<body class="py-2 px-3 sm:px-6">
 
-  <!-- 電腦版寬度最大 5xl，將各區塊間距壓縮至 space-y-4 (高度優化關鍵) -->
-  <section class="max-w-5xl mx-auto relative space-y-4">
+  <!-- 電腦版寬度最大 5xl，將各區塊間距壓縮至 space-y-3.5，保留極致高度空間 -->
+  <section class="max-w-5xl mx-auto relative space-y-3.5">
 
     <!-- 【第一區塊：主標題、副標題與痛點解決大卡片】 -->
-    <div class="bg-white border border-rose-100 rounded-2xl p-4 sm:p-5 space-y-4 shadow-md">
+    <div class="bg-white border border-rose-100 rounded-2xl p-4 sm:p-5 space-y-3 shadow-md">
       
-      <!-- 卡片內置：置中大氣的主標題與副標題 (緊湊 Padding) -->
-      <div class="space-y-1.5 text-center border-b border-rose-100 pb-3">
+      <!-- 卡片內置：置中大氣的主標題與副標題 (精簡 Padding) -->
+      <div class="space-y-1 text-center border-b border-rose-100 pb-2.5">
         <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 tracking-wide leading-tight">
           <span class="inline">注音趴＋拼音趴</span><span class="inline bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent ml-1 sm:ml-2">雙課大禮包</span>
         </h3>
-        <p class="text-slate-700 text-xs sm:text-sm font-extrabold mx-auto max-w-2xl">
-          專為 3-8 歲孩子打造，輕鬆克服注音認讀、拼音、聲調難關。
+        <p class="text-slate-700 text-xs sm:text-sm font-normal mx-auto max-w-2xl">
+          專為 3-8 歲孩子打造，輕鬆克服注音認讀、拼音、聲調難關
         </p>
       </div>
 
       <!-- 痛點解決標題 -->
-      <div class="flex items-center gap-2.5 justify-center md:justify-start">
-        <div class="w-8 h-8 rounded-lg bg-rose-50 flex items-center justify-center text-rose-500 text-base shadow-sm border border-rose-100 shrink-0">
+      <div class="flex items-center gap-2 justify-center md:justify-start">
+        <div class="w-7 h-7 rounded-lg bg-rose-50 flex items-center justify-center text-rose-500 text-sm shadow-sm border border-rose-100 shrink-0">
           <i class="fa-solid fa-child-reaching"></i>
         </div>
-        <h4 class="text-sm sm:text-base font-black text-slate-800 tracking-wider">這兩堂線上課程，能解決哪些學習痛點？</h4>
+        <h4 class="text-xs sm:text-sm font-black text-slate-800 tracking-wider">這兩堂線上課程，能解決哪些學習痛點？</h4>
       </div>
       
-      <!-- 三大詳細痛點解決方案 (在桌機上橫排，減少高度佔用) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
-        <div class="bg-rose-50/50 p-3.5 rounded-xl border border-rose-100/70 space-y-1">
+      <!-- 三大詳細痛點解決方案 (改用小內距與小標題壓低高度) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="bg-rose-50/50 p-3 rounded-xl border border-rose-100/70 space-y-0.5">
           <span class="text-rose-600 font-extrabold text-[10px] tracking-wider block">✔ 解決難寫難認問題</span>
-          <h5 class="font-extrabold text-slate-800 text-xs sm:text-sm">告別死記硬背，不寫反！</h5>
+          <h5 class="font-extrabold text-slate-800 text-xs">告別死記硬背，不寫反！</h5>
           <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
             透過情境故事與擬人化聯想，把生硬的符號化為可愛動畫。<strong>「ㄏ、ㄟ 方向寫反」</strong>的狀況迎刃而解！
           </p>
         </div>
         
-        <div class="bg-rose-50/50 p-3.5 rounded-xl border border-rose-100/70 space-y-1">
+        <div class="bg-rose-50/50 p-3 rounded-xl border border-rose-100/70 space-y-0.5">
           <span class="text-rose-600 font-extrabold text-[10px] tracking-wider block">✔ 突破拼音混淆關卡</span>
-          <h5 class="font-extrabold text-slate-800 text-xs sm:text-sm">認清介音與複雜結合音</h5>
+          <h5 class="font-extrabold text-slate-800 text-xs">認清介音與複雜結合音</h5>
           <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
             系統化帶領拼讀，讓孩子輕鬆區分像<strong>「ㄛ與ㄜ」</strong>、<strong>「ㄣ與ㄥ」</strong>這類容易搞混的發音組合！
           </p>
         </div>
         
-        <div class="bg-rose-50/50 p-3.5 rounded-xl border border-rose-100/70 space-y-1">
+        <div class="bg-rose-50/50 p-3 rounded-xl border border-rose-100/70 space-y-0.5">
           <span class="text-rose-600 font-extrabold text-[10px] tracking-wider block">✔ 降低聲調學習挫折</span>
-          <h5 class="font-extrabold text-slate-800 text-xs sm:text-sm">節奏感唸謠輕鬆學</h5>
+          <h5 class="font-extrabold text-slate-800 text-xs">節奏感唸謠輕鬆學</h5>
           <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
             將拼音變成有<strong>「節奏感的唸謠」</strong>，帶孩子複誦與記憶，注音學習充滿自信！
           </p>
@@ -145,26 +145,26 @@
       </div>
     </div>
 
-    <!-- 【第二區塊：精彩課程試看】 (控制影片區最大寬度，防止過大撐高版面) -->
-    <div class="space-y-2 max-w-4xl mx-auto">
+    <!-- 【第二區塊：精彩課程試看】 (寬度限制、高度最佳化) -->
+    <div class="space-y-1.5 max-w-4xl mx-auto">
       <div class="flex items-center justify-between px-1">
-        <h4 class="text-sm sm:text-base font-black text-slate-950 tracking-wider flex items-center gap-1.5 drop-shadow-sm">
+        <h4 class="text-xs sm:text-sm font-black text-slate-950 tracking-wider flex items-center gap-1.5 drop-shadow-sm">
           <i class="fa-solid fa-circle-play text-red-600"></i> 精彩課程試看
         </h4>
-        <span class="text-[11px] text-slate-900 font-bold">點擊播放器立即試看</span>
+        <span class="text-[10px] text-slate-900 font-bold">點擊播放器立即試看</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
         
         <!-- 左影片：注音趴 -->
         <div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-slate-900 border border-slate-200/60 shadow-sm group cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
-          <div id="cover-1" class="absolute inset-0 z-10 flex flex-col justify-between p-3" onclick="playVideo(1, 'R319JKLHOKQ')">
+          <div id="cover-1" class="absolute inset-0 z-10 flex flex-col justify-between p-2.5" onclick="playVideo(1, 'R319JKLHOKQ')">
             <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2Ffbb7121133203da17d96ec12.png" alt="注音趴試看" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-transform duration-700 group-hover:scale-105">
             <div class="relative z-10 self-start">
-              <span class="inline-block bg-amber-500 text-white text-[10px] sm:text-xs font-black px-2 py-0.5 rounded shadow-sm">注音趴</span>
+              <span class="inline-block bg-amber-500 text-white text-[10px] font-black px-2 py-0.5 rounded shadow-sm">注音趴</span>
             </div>
             <div class="absolute inset-0 flex items-center justify-center z-10">
-              <div class="w-10 h-10 rounded-full bg-amber-400 border border-white text-amber-950 flex items-center justify-center text-base shadow-sm play-btn-animation transition-transform group-hover:scale-110">
+              <div class="w-9 h-9 rounded-full bg-amber-400 border border-white text-amber-950 flex items-center justify-center text-sm shadow-sm play-btn-animation transition-transform group-hover:scale-110">
                 <i class="fa-solid fa-play ml-0.5"></i>
               </div>
             </div>
@@ -175,13 +175,13 @@
 
         <!-- 右影片：拼音趴 -->
         <div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-slate-900 border border-slate-200/60 shadow-sm group cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
-          <div id="cover-2" class="absolute inset-0 z-10 flex flex-col justify-between p-3" onclick="playVideo(2, 'cOQ5rI5xNdk')">
+          <div id="cover-2" class="absolute inset-0 z-10 flex flex-col justify-between p-2.5" onclick="playVideo(2, 'cOQ5rI5xNdk')">
             <img src="https://image.fevercdn.com?bucket=picture-original.fevercdn.com&filepath=parenting%2F5%2F2103%2F8a83beff83b6bf77df8bbe1f.png" alt="拼音趴試看" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-transform duration-700 group-hover:scale-105">
             <div class="relative z-10 self-start">
-              <span class="inline-block bg-rose-500 text-white text-[10px] sm:text-xs font-black px-2 py-0.5 rounded shadow-sm">拼音趴</span>
+              <span class="inline-block bg-rose-500 text-white text-[10px] font-black px-2 py-0.5 rounded shadow-sm">拼音趴</span>
             </div>
             <div class="absolute inset-0 flex items-center justify-center z-10">
-              <div class="w-10 h-10 rounded-full bg-violet-500 border border-white text-white flex items-center justify-center text-base shadow-sm play-btn-animation transition-transform group-hover:scale-110">
+              <div class="w-9 h-9 rounded-full bg-violet-500 border border-white text-white flex items-center justify-center text-sm shadow-sm play-btn-animation transition-transform group-hover:scale-110">
                 <i class="fa-solid fa-play ml-0.5"></i>
               </div>
             </div>
@@ -193,12 +193,12 @@
       </div>
     </div>
 
-    <!-- 【第三區塊：大禮包 4 大核心優勢】 (高度優化的緊湊橫列) -->
-    <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-md">
-      <h4 class="text-xs sm:text-sm font-black text-slate-800 tracking-wider flex items-center gap-1.5 border-b border-slate-50 pb-2 mb-2">
+    <!-- 【第三區塊：大禮包 4 大核心優勢】 (改成 2x2 橫向排列防爆高度) -->
+    <div class="bg-white border border-slate-100 rounded-2xl p-3.5 shadow-md">
+      <h4 class="text-xs font-black text-slate-800 tracking-wider flex items-center gap-1.5 border-b border-slate-50 pb-1.5 mb-1.5">
         <i class="fa-solid fa-star text-violet-500"></i> 為什麼強烈推薦這套大禮包？
       </h4>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 text-[11px] sm:text-xs text-slate-600">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-[11px] sm:text-xs text-slate-600">
         <div class="flex items-center gap-1.5 bg-slate-50 p-2 rounded-lg border border-slate-100/60">
           <span class="text-violet-500 font-black">✔</span>
           <span class="truncate"><strong>名師合體</strong>：溫美玉x魏瑛娟</span>
@@ -213,46 +213,46 @@
         </div>
         <div class="flex items-center gap-1.5 bg-slate-50 p-2 rounded-lg border border-slate-100/60">
           <span class="text-violet-500 font-black">✔</span>
-          <span class="truncate"><strong>終身觀看</strong>：無限次反覆學習</span>
+          <span class="truncate"><strong>終身觀看</strong>：無限制反覆學習</span>
         </div>
       </div>
     </div>
 
-    <!-- 【第四區塊：促購主卡】 (緊湊版大禮包卡片) -->
+    <!-- 【第四區塊：促購主卡】 (極致輕薄精美化) -->
     <div class="w-full course-gradient-premium relative z-10 shadow-lg">
       <div class="p-4 sm:p-5">
         <div class="flex flex-col md:flex-row items-center justify-between gap-4">
           
           <!-- 左側：折價券代碼、引導與 Premium 會員提示小字 -->
-          <div class="space-y-2 text-center md:text-left flex-1 min-w-0">
+          <div class="space-y-1.5 text-center md:text-left flex-1 min-w-0">
             <div class="flex flex-wrap items-center justify-center md:justify-start">
-              <span class="inline-flex items-center text-[10px] sm:text-xs text-rose-600 bg-rose-50 border border-rose-150 font-bold tracking-wide px-2.5 py-1 rounded-full shadow-sm">
-                <i class="fa-solid fa-ticket text-rose-500 mr-1 animate-pulse"></i> 升小一限定優惠：輸入優惠代碼 <span class="bg-rose-600 text-white px-1 py-0.5 rounded mx-1 font-mono text-[10px] font-black">GPM300</span> 再折 300 元
+              <span class="inline-flex items-center text-[10px] sm:text-xs text-rose-600 bg-rose-50 border border-rose-150 font-bold tracking-wide px-2.5 py-0.5 rounded-full shadow-sm">
+                <i class="fa-solid fa-ticket text-rose-500 mr-1 animate-pulse"></i> 升小一限定優惠：輸入優惠代碼 <span class="bg-rose-600 text-white px-1.5 py-0.5 rounded mx-1 font-mono text-[10px] font-black">GPM300</span> 再折 300 元
               </span>
             </div>
             
-            <h4 class="text-lg sm:text-xl font-black text-slate-800 leading-tight">
+            <h4 class="text-base sm:text-lg md:text-xl font-black text-slate-800 leading-tight">
               把握合購優惠，讓學注音變得好玩又輕鬆！
             </h4>
 
-            <p class="text-[10px] sm:text-[11px] text-slate-500 font-bold flex items-center justify-center md:justify-start gap-1">
+            <p class="text-[10px] sm:text-[11px] text-slate-500 font-bold flex items-center justify-center md:justify-start gap-1 leading-normal">
               <i class="fa-solid fa-gift text-orange-500"></i>
               <span>消費滿 <span class="text-orange-600 font-extrabold">NT$ 5,000</span> 即自動升等「親子天下 Premium 会員」享全方位專屬權益。</span>
             </p>
           </div>
 
-          <!-- 右側：最終價格與搶購 CTA (結構優化，垂直空間縮小) -->
-          <div class="flex flex-row md:flex-col items-center justify-between md:justify-center shrink-0 w-full md:w-auto md:min-w-[200px] md:border-l border-slate-100 md:pl-6 gap-3 pt-3 md:pt-0 border-t md:border-t-0 border-slate-100">
+          <!-- 右側：最終價格與搶購 CTA -->
+          <div class="flex flex-row md:flex-col items-center justify-between md:justify-center shrink-0 w-full md:w-auto md:min-w-[180px] md:border-l border-slate-100 md:pl-5 gap-2.5 pt-2.5 md:pt-0 border-t md:border-t-0 border-slate-100">
             <div class="text-left md:text-right space-y-0.5">
               <span class="text-slate-400 line-through text-[10px] sm:text-xs block">原價 $7,600</span>
               <div class="flex items-baseline md:justify-end gap-1">
-                <span class="text-violet-600 font-black text-xl sm:text-2xl whitespace-nowrap">NT$ 5,490</span>
+                <span class="text-violet-600 font-black text-lg sm:text-xl md:text-2xl whitespace-nowrap">NT$ 5,490</span>
               </div>
             </div>
 
             <!-- 促購 CTA 按鈕 -->
             <div class="w-1/2 md:w-full">
-              <a href="https://learning.parenting.com.tw/plans/467de1dc-cefd-4a7c-a852-ee32c81e91a2" target="_blank" rel="noopener noreferrer" class="btn-action w-full py-2.5 px-3 rounded-xl font-black text-xs sm:text-sm transition-all duration-300">
+              <a href="https://learning.parenting.com.tw/plans/467de1dc-cefd-4a7c-a852-ee32c81e91a2" target="_blank" rel="noopener noreferrer" class="btn-action w-full py-2 px-3 rounded-xl font-black text-xs sm:text-sm transition-all duration-300">
                 <span class="whitespace-nowrap">搶先領取優惠 ➔</span>
               </a>
             </div>
@@ -268,15 +268,16 @@
   <script>
     function playVideo(id, videoId) {
       const cover = document.getElementById(`cover-${id}`);
-      const player = document.getElementById(`player-${id}`);
+      const player = document.getElementById(`player(` + id + `)`); // 備用或直接使用正確 getElement
+      const realPlayer = document.getElementById(`player-${id}`);
       
       // 隱藏封面
       cover.classList.add('hidden');
       // 顯示影片播放器
-      player.classList.remove('hidden');
+      realPlayer.classList.remove('hidden');
       
       // 載入 YouTube 播放器
-      player.innerHTML = `
+      realPlayer.innerHTML = `
         <iframe 
           class="w-full h-full rounded-xl" 
           src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
